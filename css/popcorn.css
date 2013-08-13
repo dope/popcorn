@@ -1,0 +1,220 @@
+
+/* Hard Reset ================*/
+article, 
+aside, 
+details, 
+figcaption, 
+figure, 
+footer, 
+header, 
+hgroup, 
+nav, 
+section {
+    display: block;
+}
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+input:focus, 
+textarea:focus {
+    outline: none;
+}
+label, 
+select, 
+button, 
+input[type="submit"], 
+input[type="radio"], 
+input[type="checkbox"] 
+input[type="button"] {
+    cursor: pointer;
+}
+a, a:visited, a:active {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+* {
+    font-size:100%;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+body {
+    background:#fff;
+}
+
+/* Main Wraper ================*/
+#videoWrap {
+   width:100%; 
+   max-width:900px; 
+   margin:30px auto;
+}
+
+/* Actual Video ================*/
+#mainVideo {  
+   width:100%; 
+   max-width:900px; 
+   height:auto; 
+}
+
+/* Menu for video ================*/
+#controlsOptions {
+    margin-top:-4px;
+    width:100%;
+    background:#00aced;
+}
+#volume {
+    width:80px;
+}
+#playPausebtn {
+    padding:20px;
+    padding-bottom:10px;
+}
+#fullscreenbtn, #mutebtn {
+    float:right;
+    padding:20px;
+    padding-bottom:10px;
+}
+.btn {
+    background:none;
+    border:none;
+}
+.btn:hover {
+    background:rgba(0, 0, 0, .1);
+}
+input[type='range']#slider {
+    width:63%;
+    -webkit-appearance: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: rgba(0,0,0,.2);
+    height: 10px;
+}
+#curtimetext, #durtimetext {
+    padding:10px;
+    font:16px"Source Sans Pro";
+    letter-spacing: 1px;
+    color:#fff;
+}
+input[type='range']#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    background-color: #fff;
+    height: 20px;
+    width: 20px;
+}
+input[type='range']#slider::-webkit-slider-thumb:active {
+    padding:11px;
+}
+
+[class*="icon-"] {
+  background: url('../img/controls.svg');
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.icon-play {
+  background-position: -25px -12px;
+}
+
+.icon-pause {
+  background-position: -76px -12px;
+}
+
+.icon-mute {
+  background-position: -123px -12px;
+}
+
+.icon-unmute {
+  background-position: -173px -12px;
+}
+
+.icon-full {
+  background-position: -220px -12px;
+}
+
+/* Landscape mobile & down
+===============================*/
+@media (max-width: 480px) {
+    #videoWrap {
+        margin:0 auto;
+    }
+    input[type='range']#slider {
+        width:15%;
+    }
+    #controlsOptions {
+        margin-top:-5px;
+    }
+    #playPausebtn {
+        padding:10px;
+        padding-bottom:5px;
+    }
+    #fullscreenbtn, #mutebtn {
+        float:right;
+        padding:10px;
+        padding-bottom:5px;
+    }
+}
+
+/* Mobile to Tablet Portrait
+===============================*/
+@media (min-width: 481px) and (max-width: 800px) {
+    #videoWrap {
+        margin:0 auto;
+    }
+    #mainVideo {
+        height:350px;
+    }
+    input[type='range']#slider {
+        width:64%;
+    }
+    #controlsOptions {
+        margin-top:-5px;
+    }
+    #playPausebtn {
+        padding:10px;
+        padding-bottom:5px;
+    }
+    #fullscreenbtn, #mutebtn {
+        float:right;
+        padding:10px;
+        padding-bottom:5px;
+    }
+}
+
+/* Landscape Tablet to Desktop
+===============================*/
+@media (min-width: 801px) and (max-width: 1100px) {
+    #videoWrap {
+        margin:0 auto;
+        max-width:1200px; 
+    }
+    #mainVideo {
+        height:631px;
+        max-width:1200px; 
+    }
+    input[type='range']#slider {
+        width:64%;
+    }
+    #controlsOptions {
+        margin-top:-5px;
+    }
+    #playPausebtn {
+        padding:10px;
+        padding-bottom:5px;
+    }
+    #fullscreenbtn, #mutebtn {
+        float:right;
+        padding:10px;
+        padding-bottom:5px;
+    }
+}     
