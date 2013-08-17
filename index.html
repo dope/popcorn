@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="description" content="">
         <link rel="stylesheet" type="text/css" href="css/popcorn.css">
-        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
         <title>Popcorn &#8212; Video Life</title>
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -15,12 +14,17 @@
     
     <body>
         <div id="videoWrap">
-            <video id="mainVideo">
-                <source src="your_movie.mp4" type="video/mp4">
-                <source src="your_movie.ogv" type="video/ogg">
+
+            <video id="mainVideo" poster="img/popcorn-poster.svg">
+                <source src="media/your_movie.mp4" type="video/mp4">
+                <source src="media/your_movie.m4v" type="video/mp4">
+                <source src="media/your_movie.mov" type="video/mov">
+                <source src="media/your_movie.ogv" type="video/ogg">
             </video>
+
             <div id="controlsOptions">
-                <button class="btn" id="playPausebtn">
+
+                <button class="videoBtn" id="playPausebtn">
                     <i class="icon-play"></i>
                 </button>	
 
@@ -28,13 +32,14 @@
                 <input id="slider" type="range" min="0" max="100" value="0" step="1">	
                 <span id="durtimetext">00:00</span>
 
-                <button class="btn" id="fullscreenbtn">
+                <button class="videoBtn" id="fullscreenbtn">
                     <i class="icon-full"></i>
                 </button>
 
-                <button class="btn" id="mutebtn">
+                <button class="videoBtn" id="mutebtn">
                     <i class="icon-unmute"></i>
                 </button>
+                
             </div>
         </div>
         

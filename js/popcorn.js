@@ -1,27 +1,59 @@
-// basic variables
-var vid, playbtn, slider, curtimetext, durtimetext, mutebtn, fullscreenbtn;
+//
+// Popcorn Version 0.3
+// A run through of what's what.
+//
+// Made by @joericho
+// Licensed under MIT
+//
 
+var vid, playbtn, clickplay, slider, curtimetext, durtimetext, mutebtn, fullscreenbtn;
 
 function intializePlayer() {
-    // Object references
+    // object references
+    // main vid class
     vid = document.getElementById("mainVideo");
+    // play/pause button
     playbtn = document.getElementById("playPausebtn");
+    // click the video to play
+    clickplay = document.getElementById("mainVideo");
+    // time slider
     slider = document.getElementById("slider");
+    // curent time
     curtimetext = document.getElementById("curtimetext");
+    // duration time
     durtimetext = document.getElementById("durtimetext");
+    // mute button
     mutebtn = document.getElementById("mutebtn");
+    // full screen option
     fullscreenbtn = document.getElementById("fullscreenbtn");
-    // Event listeners
+    // event listeners
+    // play button
     playbtn.addEventListener("click", playPause, false);
+    // click to play
+    clickplay.addEventListener("click", clickPlay, false);
+    // text slider
     slider.addEventListener("change", vidSeek, false);
+    // time update
     vid.addEventListener("timeupdate", seektimeupdate, false);
+    // mute button
     mutebtn.addEventListener("click", vidmute, false);
+    // full screen
     fullscreenbtn.addEventListener("click", toggleFullScreen, false);
 }
 window.onload = intializePlayer;
 
 // play and pause button
 function playPause() {
+    if (vid.paused) {
+        vid.play();
+        playbtn.innerHTML = "<i class='icon-pause'></i>";
+    } else {
+        vid.pause();
+        playbtn.innerHTML = "<i class='icon-play'></i>";
+    }
+}
+
+function clickPlay() {
     if (vid.paused) {
         vid.play();
         playbtn.innerHTML = "<i class='icon-pause'></i>";
