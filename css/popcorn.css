@@ -18,6 +18,7 @@
     padding: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+         box-sizing: border-box;
 }
 body {
     background:#fff;
@@ -52,11 +53,12 @@ body {
 /* Menu for video ================*/
  #controlsOptions {
     position: absolute;
+    width:90%;
     bottom:20px;
-    left:20px;
-    right:20px;
+    left:0px;
+    right:0px;
+    margin:0 auto;
     z-index:100;
-    width:auto;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
     border-radius:4px;
@@ -77,30 +79,27 @@ body {
 #controlsOptions:hover {
     opacity: 1;
 }
-#volume {
-    width:80px;
-}
 #playPausebtn {
     padding:16px;
     padding-bottom:10px;
 }
 #fullscreenbtn, #mutebtn {
     float:right;
+    width:9%;
     padding:16px;
     padding-bottom:10px;
 }
 .videoBtn {
     background:none;
     border:none;
-    width:60px;
+    width:9%;
     cursor: pointer;
 }
 .videoBtn:hover {
     background:rgba(0, 0, 0, .1);
 }
 input[type='range']#slider {
-    width:540px;
-    max-width:560px;
+    width:50%;
     -webkit-appearance: none;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -110,10 +109,12 @@ input[type='range']#slider {
 }
 #curtimetext, #durtimetext {
     padding:10px;
-    font:16px"Open Sans";
+    font:16px"Helvetica Neue";
     letter-spacing: 1px;
     color:#fff;
-    width:auto;
+    width:9%;
+    display:inline-block;
+    text-align: center;
 }
 input[type='range']#slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -150,37 +151,10 @@ input[type='range']#slider::-webkit-slider-thumb:active {
 .icon-full {
     background-position: -220px -12px;
 }
-
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
-  #controlsOptions {
-    display: none;
-  }
-  #mainVideo {
-    height:200px;
-  }
+    #controlsOptions {
+        display: none;
+    }
 }
-
-/* Mobile to Tablet Portrait
-===============================*/
-@media (min-width: 481px) and (max-width: 800px) {
-  input[type='range']#slider {
-    display: none;
-  }
-  #mainVideo {
-    height:500px;
-  }
-}
-
-/* Landscape Tablet to Desktop
-===============================*/
-@media (min-width: 801px) and (max-width: 1100px) { 
-  input[type='range']#slider {
-    width:340px;
-    max-width:560px;
-  }
-  #mainVideo {
-    height:500px;
-  }
-}   
