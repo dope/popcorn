@@ -6,7 +6,16 @@
 // Licensed under MIT
 //
 
-var vid, playbtn, clickplay, slider, curtimetext, durtimetext, mutebtn, fullscreenbtn;
+// basic variables
+var vid;
+var playbtn;
+var playbtn;
+var clickplay;
+var slider;
+var curtimetext;
+var durtimetext;
+var mutebtn;
+var fullscreenbtn;
 
 function intializePlayer() {
     // object references
