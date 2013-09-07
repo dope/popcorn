@@ -128,8 +128,9 @@ input[type='range']#slider::-webkit-slider-thumb {
 input[type='range']#slider::-webkit-slider-thumb:active {
     padding:11px;
 }
-/* Icons (SVG sprite) */
+/* Icons - SVG sprite with PNG fallback */
 [class*="icon-"] {
+    background: url('../img/controls.png');
     background: url('../img/controls.svg');
     width: 25px;
     height: 25px;
