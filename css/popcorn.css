@@ -54,16 +54,16 @@ body {
  #controlsOptions {
     position: absolute;
     width:90%;
-    bottom:20px;
+    bottom:40px;
     left:0px;
     right:0px;
     margin:0 auto;
     z-index:100;
-    -webkit-border-radius:4px;
-    -moz-border-radius:4px;
-    border-radius:4px;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    border-radius:2px;
     background:#00aced;
-    opacity:0;
+    opacity:1;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
@@ -80,14 +80,20 @@ body {
     opacity: 1;
 }
 #playPausebtn {
-    padding:16px;
-    padding-bottom:10px;
+    padding:26px;
+    padding-bottom:20px;
+    background:rgba(0,0,0,.1);
+}
+#playPausebtn:hover {
+    padding:26px;
+    padding-bottom:20px;
+    background:rgba(0,0,0,.2);
 }
 #fullscreenbtn, #mutebtn {
     float:right;
     width:9%;
-    padding:16px;
-    padding-bottom:10px;
+    padding:26px;
+    padding-bottom:20px;
 }
 .videoBtn {
     background:none;
@@ -106,6 +112,7 @@ input[type='range']#slider {
     border-radius: 5px;
     background: rgba(0, 0, 0, .2);
     height: 10px;
+    overflow: hidden;
 }
 #curtimetext, #durtimetext {
     padding:10px;
@@ -117,16 +124,19 @@ input[type='range']#slider {
     text-align: center;
 }
 input[type='range']#slider::-webkit-slider-thumb {
+    position: relative;
     -webkit-appearance: none;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
     background-color: #fff;
-    height: 20px;
-    width: 20px;
+    height: 10px;
+    width: 10px;
 }
-input[type='range']#slider::-webkit-slider-thumb:active {
-    padding:11px;
+input[type='range']#slider::-webkit-slider-thumb:before {
+    position: absolute;
+    content:"";
+    background:#fff;
+    width:400px;
+    height:10px;
+    left:-400px;
 }
 /* Icons - SVG sprite with PNG fallback */
 [class*="icon-"] {
@@ -152,6 +162,7 @@ input[type='range']#slider::-webkit-slider-thumb:active {
 .icon-full {
     background-position: -220px -12px;
 }
+
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
