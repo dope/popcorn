@@ -16,9 +16,10 @@
     font-size:100%;
     margin: 0;
     padding: 0;
+    outline:none;
     -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-         box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 body {
     background:#fff;
@@ -41,7 +42,7 @@ body {
     position: relative;
     width:100%;
     max-width:900px;
-    margin:0px auto;
+    margin:0 auto;
     direction: ltr;
 }
 /* Actual Video ================*/
@@ -53,21 +54,22 @@ body {
 /* Menu for video ================*/
  #controlsOptions {
     position: absolute;
-    width:90%;
-    bottom:40px;
-    left:0px;
-    right:0px;
+    z-index: 2147483647;
+    width:100%;
+    bottom:0px;
+    left:0;
+    right:0;
     margin:0 auto;
-    z-index:100;
     -webkit-border-radius:2px;
     -moz-border-radius:2px;
     border-radius:2px;
     background:#00aced;
-    opacity:0;
+    opacity:1;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
     transition-duration: 1s;
+    text-align: center;
 }
 #mainVideo:hover ~ #controlsOptions {
     opacity: 1;
@@ -80,12 +82,14 @@ body {
     opacity: 1;
 }
 #playPausebtn {
-    padding:26px;
+    padding:28px;
     padding-bottom:20px;
     background:rgba(0,0,0,.1);
+    float:left;
+    margin-right:15px;
 }
 #playPausebtn:hover {
-    padding:26px;
+    padding:28px;
     padding-bottom:20px;
     background:rgba(0,0,0,.2);
 }
@@ -94,6 +98,10 @@ body {
     width:9%;
     padding:26px;
     padding-bottom:20px;
+}
+#curtimetext,#slider,#durtimetext {
+    display:inline-block;
+    margin-top:18px;
 }
 .videoBtn {
     background:none;
@@ -104,7 +112,7 @@ body {
 .videoBtn:hover {
     background:rgba(0, 0, 0, .1);
 }
-input[type='range']#slider {
+input[type='range']#slider,::-moz-range-track {
     width:50%;
     -webkit-appearance: none;
     -webkit-border-radius: 5px;
@@ -114,6 +122,11 @@ input[type='range']#slider {
     height: 10px;
     overflow: hidden;
 }
+
+::-moz-range-track {
+    width:100%;
+}
+
 #curtimetext, #durtimetext {
     padding:10px;
     font:16px"Helvetica Neue";
@@ -129,14 +142,17 @@ input[type='range']#slider::-webkit-slider-thumb {
     background-color: #fff;
     height: 10px;
     width: 10px;
+    -webkit-border-radius:100px;
+    -moz-border-radius:100px;
+    border-radius:100px;
 }
 input[type='range']#slider::-webkit-slider-thumb:before {
     position: absolute;
     content:"";
     background:#fff;
-    width:400px;
+    width:500px;
     height:10px;
-    left:-400px;
+    left:-495px;
 }
 /* Icons - SVG sprite with PNG fallback */
 [class*="icon-"] {
@@ -163,10 +179,26 @@ input[type='range']#slider::-webkit-slider-thumb:before {
     background-position: -220px -12px;
 }
 
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+
 /* Landscape mobile & down
 ===============================*/
 @media (max-width: 480px) {
     #controlsOptions {
         display: none;
+    }
+}
+
+@-moz-document url-prefix() {
+    #controlsOptions {
+        z-index:100;
+    }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    #controlsOptions {
+        z-index:100;
     }
 }
