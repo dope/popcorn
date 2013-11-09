@@ -1,5 +1,5 @@
 //
-// Popcorn Version 0.3
+// Popcorn V1
 // A run through of what's what.
 //
 // Made by @joericho
@@ -12,8 +12,8 @@ var playbtn;
 var playbtn;
 var clickplay;
 var slider;
-var curtimetext;
-var durtimetext;
+var current;
+var duration;
 var mutebtn;
 var fullscreenbtn;
 
@@ -28,9 +28,9 @@ function intializePlayer() {
     // time slider
     slider = document.getElementById("slider");
     // curent time
-    curtimetext = document.getElementById("curtimetext");
+    current = document.getElementById("current");
     // duration time
-    durtimetext = document.getElementById("durtimetext");
+    duration = document.getElementById("duration");
     // mute button
     mutebtn = document.getElementById("mutebtn");
     // full screen option
@@ -98,8 +98,8 @@ function seektimeupdate() {
     if (durmins < 10) {
         durmins = "0" + durmins;
     }
-    curtimetext.innerHTML = curmins + ":" + cursecs;
-    durtimetext.innerHTML = durmins + ":" + dursecs;
+    current.innerHTML = curmins + ":" + cursecs;
+    duration.innerHTML = durmins + ":" + dursecs;
 }
 
 // mute & unmute the video
