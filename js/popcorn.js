@@ -123,3 +123,7 @@ function toggleFullScreen() {
         vid.mozRequestFullScreen();
     }
 }
+
+function touchStart(event){
+  var playbtn = event.target;
+}

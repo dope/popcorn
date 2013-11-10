@@ -8,25 +8,36 @@
  *
  */
 
-body {
+* {
   margin:0;
+  padding:0;
+}
+
+body {
+  background:#fff;
 }
 
 /* Main Wrap */
 #videoWrap {
   position: relative;
-  width: 100%;
-  height:600px;
   max-width: 900px;
   margin: 0 auto;
-  font-family:"Helvetica Neue", Helvetica, Arial;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  overflow: hidden;
+  padding-bottom: 42%;
+  padding-top: 25px;
+  height: 0;
 }
 
 /* The actual video */
 #mainVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height:100%;
   cursor: pointer;
+  background:#212b35;
 }
 
 /* Control menu */
@@ -38,21 +49,13 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: #00aced;
+  background: #000;
   opacity: 1;
-  -webkit-transition-duration: 1s;
-  -moz-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
-  text-align: center;
+  color:#fff;
 }
 
 #mainVideo:hover ~ #controls {
   opacity: 1;
-  -webkit-transition-duration: .8s;
-  -moz-transition-duration: .8s;
-  -o-transition-duration: .8s;
-  transition-duration: .8s;
 }
 
 #controls:hover {
@@ -66,22 +69,21 @@ body {
   border: 0;
   width: 9%;
   cursor: pointer;
-  padding:2em 0 1.2em 0;
+  padding:2em 0 1.4em 0;
 }
 
 .videoBtn:hover {
-  background: rgba(0,0,0,.1);
+  background: rgba(225,225,225,.1);
 }
 
 /* Play Button */
 #playPausebtn {
-  background: rgba(0,0,0,.1);
   float: left;
   margin-right: 0px;
 }
 
 #playPausebtn:hover {
-  background: rgba(0,0,0,.2);
+  background: rgba(225,225,225,.1);
 }
 
 /* Full screen Button */
@@ -90,41 +92,81 @@ body {
   width: 9%;
 }
 
-#current,#slider,#duration {
+#current,#duration {
   display: inline-block;
-  margin-top: 0px;
+  margin-top: 3px;
 }
 
 #current,#duration {
   padding: 2em 0 1.5em 0;
-  font-size: 13px;
+  font-size: 12px;
   color: #fff;
-  width: 9%;
+  width: 4%;
   display: inline-block;
   text-align: center;
 }
 
+#current {
+  padding-left:10px;
+}
+
+#duration {
+  color:#777;
+}
+
+.divide {
+  font-size: 12px;
+  color:#777;
+}
+
 /* Time slider */
 input[type=range]#slider {
+  position: absolute;
+  left:0px;
+  bottom: 60px;
   outline: none;
-  width: 50%;
+  width: 100%;
   -webkit-appearance: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  background: rgba(0,0,0,.2);
   height: 10px;
+  background:rgba(0,0,0,.2);
 }
 
 input[type=range]#slider::-webkit-slider-thumb {
   position: relative;
   -webkit-appearance: none;
-  background-color: #fff;
+  background:#fff;
   height: 20px;
   width: 20px;
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
+}
+
+input[type=range]#slider::-webkit-slider-thumb:before {
+  position: absolute;
+  z-index:-99999;
+  top: 4px;
+  left: -990px;
+  width:1000px;
+  height:10px;
+  content:"";
+  background:#27aae1;
+}
+
+input[type=range]#slider::-webkit-slider-thumb:after {
+  position: absolute;
+  z-index:1000000000;
+  top:26%;
+  left:0;
+  right:0;
+  margin:0 auto;
+  width:10px;
+  height:10px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  content:"";
+  background: #ccc;
 }
 
 ::-webkit-media-controls {
@@ -167,93 +209,26 @@ video::-webkit-media-controls-enclosure {
 
 /* Landscape mobile & down */
 @media (max-width: 30em) {
-  #videoWrap {
-    height:200px;
-  }
-
-  #controls {
-    opacity: 1;
-  }
-  
-  input[type=range]#slider {
-    width:20%;
-    height:8px;
-    margin-left:1.3em;
-    margin-right:1.3em;
-  }
-
-  input[type=range]#slider::-webkit-slider-thumb {
-    width:10px;
-    height:10px;
-  }
-  
-  #current {
-   display:none;
-  }
-  
   .videoBtn {
-    background: none;
-    width: 20%;
+    width:20%!important;
+  }
+  .divide {
+    margin:0 4px 0 20px;
   }
 
-  #fullscreenbtn,#mutebtn {
-    width:15%;
+  #videoWrap {
+    padding-bottom: 80%;
   }
-  
-  #controls {
-    bottom: -59px;
-  }
-
 }
 
 /* Portrait tablet to landscape */
 @media (min-width: 30em) and (max-width: 50em) {
-  #controls {
-    opacity: 1;
-  }
-
   #videoWrap {
-    height:400px;
+    padding-bottom: 50%;
   }
-  
-  input[type=range]#slider {
-    width:30%;
-    height:8px;
-    margin-left:1.3em;
-    margin-right:1.3em;
-  }
-
-  input[type=range]#slider::-webkit-slider-thumb {
-    width:10px;
-    height:10px;
-  }
-  
-  #current {
-   display:none;
-  }
-  
-  .videoBtn {
-    background: none;
-    width: 20%;
-  }
-
-  #fullscreenbtn,#mutebtn {
-    width:15%;
-  }
-  
-  #controls {
-    bottom: -59px;
-  }
-
 }
 
 /* Landscape to small desktop */
 @media (min-width: 50em) and (max-width: 68.750em) {
-  #videoWrap {
-    height:500px;
-  }
 
-  #controls {
-    bottom:0;
-  }
 }
