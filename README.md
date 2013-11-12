@@ -12,18 +12,17 @@ You will notice that that ``popcorn.min.js`` is compressed but Popcorn also come
 
 Next you're going to want to add the markup which is pretty small.
 
-```
-<div id="videoWrap">
+```<div id="videoWrap">
         <video 
-                id="mainVideo"
-                poster="http://popcorn.im/img/popcorn-poster.svg"
-                src="http://popcorn.im/media/sin.mp4" type="video/mp4"
-                src="http://popcorn.im/media/sintel.m4v" type="video/mp4"
-                src="http://popcorn.im/media/sintel.mov" type="video/mov"
+            id="mainVideo"
+            poster="http://popcorn.im/img/popcorn-poster.svg"
+            src="http://popcorn.im/media/sin.mp4" type="video/mp4"
+            src="http://popcorn.im/media/sintel.m4v" type="video/mp4"
+            src="http://popcorn.im/media/sintel.mov" type="video/mov"
                 src="http://popcorn.im/media/sin.ogv" type="video/ogg">
-        </video>
+            </video>
             
-        <div id="controls">
+            <div id="controls">
                 <input id="slider" type="range" min="0" max="100" value="0" step="1">
                 <button class="videoBtn" id="playPausebtn">
                     <i class="icon-play"></i>
@@ -39,7 +38,7 @@ Next you're going to want to add the markup which is pretty small.
                     <i class="icon-unmute"></i>
                 </button> 
             </div>
-</div>
+        </div>
 ```
         
 Obviously you're going to want to replace the example video for your actual video which is just as easy as replacing the file names. After you have added the markup, you're done and ready to use or style your own video player.
