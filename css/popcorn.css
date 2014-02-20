@@ -2,7 +2,7 @@
  *
  * Popcorn V1
  * A run through of what's what.
- * 
+ *
  * Made by @joericho
  * Licensed under MIT
  *
@@ -36,7 +36,6 @@ body {
   left: 0;
   width: 100%;
   cursor: pointer;
-  background:red;
 }
 
 /* Control menu */
@@ -170,7 +169,7 @@ input[type=range]#slider::-webkit-slider-thumb:before {
 input[type=range]#slider::-webkit-slider-thumb:after {
   position: absolute;
   z-index:1000000000;
-  top:26%;
+  top:25%;
   left:0;
   right:0;
   margin:0 auto;
@@ -217,9 +216,7 @@ input[type=range]#slider::-webkit-slider-thumb:after {
   background-position: -220px -12px;
 }
 
-video::-webkit-media-controls-enclosure {
-  display: none !important;
-}
+
 
 /* Landscape mobile & down */
 @media (max-width: 30em) {
