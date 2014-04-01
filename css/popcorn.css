@@ -22,18 +22,13 @@ body {
   position: relative;
   margin: 0 auto;
   max-width:900px;
+  height:auto;
   font-family: "Helvetica Neue", Helvetica, Arial;
   overflow: hidden;
-  padding-bottom: 39.6%;
-  padding-top: 0px;
-  height: 0;
 }
 
 /* The actual video */
 #mainVideo {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   cursor: pointer;
 }
@@ -47,8 +42,7 @@ body {
   left: 0;
   right: 0;
   margin: 0 auto;
-  background: #000;
-  opacity: 0;
+  background:#3498db;
   color:#fff;
   -webkit-transition: all 2s ease-in-out;
   -moz-transition: all 2s ease-in-out;
@@ -86,7 +80,7 @@ body {
 }
 
 .videoBtn:hover {
-  background: rgba(225,225,225,.1);
+  background: rgba(0,0,0,.1);
 }
 
 /* Play Button */
@@ -96,7 +90,7 @@ body {
 }
 
 #playPausebtn:hover {
-  background: rgba(225,225,225,.1);
+  background: rgba(0,0,0,.1);
 }
 
 /* Full screen Button */
@@ -124,12 +118,14 @@ body {
 }
 
 #duration {
-  color:#777;
+  color:rgba(0,0,0,.3);
+  font-weight:600;
 }
 
 .divide {
   font-size: 12px;
-  color:#777;
+  font-weight:600;
+  color:rgba(0,0,0,.3);
 }
 
 /* Time slider */
@@ -141,7 +137,7 @@ input[type=range]#slider {
   width: 100%;
   -webkit-appearance: none;
   height: 10px;
-  background:rgba(0,0,0,.2);
+  background:#2980b9;
 }
 
 input[type=range]#slider::-webkit-slider-thumb {
@@ -153,17 +149,6 @@ input[type=range]#slider::-webkit-slider-thumb {
   -webkit-border-radius: 100px;
   -moz-border-radius: 100px;
   border-radius: 100px;
-}
-
-input[type=range]#slider::-webkit-slider-thumb:before {
-  position: absolute;
-  z-index:-99999;
-  top: 4px;
-  left: -990px;
-  width:1000px;
-  height:10px;
-  content:"";
-  background:#27aae1;
 }
 
 input[type=range]#slider::-webkit-slider-thumb:after {
@@ -179,7 +164,7 @@ input[type=range]#slider::-webkit-slider-thumb:after {
   -moz-border-radius: 100px;
   border-radius: 100px;
   content:"";
-  background: #ccc;
+  background:#3498db;
 }
 
 ::-webkit-media-controls {
@@ -214,46 +199,4 @@ input[type=range]#slider::-webkit-slider-thumb:after {
 
 .icon-full {
   background-position: -220px -12px;
-}
-
-
-
-/* Landscape mobile & down */
-@media (max-width: 30em) {
-  .videoBtn {
-    width:20%!important;
-  }
-  .divide {
-    margin:0 4px 0 20px;
-  }
-
-  #videoWrap {
-    padding-bottom: 60%;
-  }
-
-  #controls {
-    opacity:1;
-  }
-}
-
-/* Portrait tablet to landscape */
-@media (min-width: 30em) and (max-width: 50em) {
-  #videoWrap {
-    padding-bottom: 50%;
-  }
-
-  #controls {
-    opacity:1;
-  }
-}
-
-/* Landscape to small desktop */
-@media (min-width: 50em) and (max-width: 68.750em) {
-  #controls {
-    opacity:1;
-  }
-
-  #videoWrap {
-    padding-bottom: 50%;
-  }
 }

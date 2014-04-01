@@ -16,33 +16,35 @@ Next you're going to want to add the markup which is pretty small.
 
 ```
 <div id="videoWrap">
-  <video 
-    id="mainVideo"
-    poster="http://popcorn.im/img/popcorn-poster.svg"
-    src="http://popcorn.im/media/sin.mp4" type="video/mp4"
-    src="http://popcorn.im/media/sintel.m4v" type="video/mp4"
-    src="http://popcorn.im/media/sintel.mov" type="video/mov"
-    src="http://popcorn.im/media/sin.ogv" type="video/ogg">
-  </video>
+    <video
+        id="mainVideo"
+        poster="http://popcorn.im/img/popcorn-poster.svg"
+        src="http://popcorn.im/media/sin.mp4" type="video/mp4"
+        src="http://popcorn.im/media/sintel.m4v" type="video/mp4"
+        src="http://popcorn.im/media/sintel.mov" type="video/mov"
+        src="http://popcorn.im/media/sin.ogv" type="video/ogg">
+    </video>
 
-  <div id="controls">
-    <input id="slider" type="range" min="0" max="100" value="0" step="1">
-    <button class="videoBtn" id="playPausebtn">
-      <i class="icon-play"></i>
-    </button>   
-    <span id="current">00:00</span>
-    <span class="divide">/</span>
-    <span id="duration">00:00</span>
-    <button class="videoBtn" id="fullscreenbtn">
-      <i class="icon-full"></i>
-    </button>
-    <button class="videoBtn" id="mutebtn">
-      <i class="icon-unmute"></i>
-    </button> 
-  </div>
+    <div id="controls">
+        <input id="slider" type="range" min="0" max="100" value="0" step="1">
+        <button class="videoBtn" id="playPausebtn">
+            <i class="icon-play"></i>
+        </button>
+        <span id="current">00:00</span>
+        <span class="divide">/</span>
+        <span id="duration">00:00</span>
+
+        <button class="videoBtn" id="fullscreenbtn">
+            <i class="icon-full"></i>
+        </button>
+
+        <button class="videoBtn" id="mutebtn">
+            <i class="icon-unmute"></i>
+        </button>
+    </div>
 </div>
 ```
-        
+
 Obviously you're going to want to replace the example video for your actual video which is just as easy as replacing the file names. After you have added the markup, you're done and ready to use or style your own video player.
 
 ###Support
@@ -50,7 +52,6 @@ Popcorn is not complete as of yet, but I'm still offering some strong support in
 
 ###Todo List
 - Get it usable on older browsers
-- Go over responsiveness 
+- Make responsive over mobile & tablet
 - Create some sort of FireFox support for the slider
-
-        
+- Create more than one theme

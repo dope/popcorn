@@ -78,7 +78,7 @@ function vidSeek() {
     vid.currentTime = seekto;
 }
 
-// updating time, wit maths & shit
+// updating time, with maths & shit
 function seektimeupdate() {
     var nt = vid.currentTime * (100 / vid.duration);
     slider.value = nt;
