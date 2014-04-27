@@ -14,15 +14,15 @@ var clickplay;
 var slider;
 var current;
 var duration;
-var mutebtn;
-var fullscreenbtn;
+var muteBtn;
+var fullScreen;
 
 function intializePlayer() {
     // object references
     // main vid class
     vid = document.getElementById("mainVideo");
     // play/pause button
-    playbtn = document.getElementById("playPausebtn");
+    playbtn = document.getElementById("playPause");
     // click the video to play
     clickplay = document.getElementById("mainVideo");
     // time slider
@@ -32,9 +32,9 @@ function intializePlayer() {
     // duration time
     duration = document.getElementById("duration");
     // mute button
-    mutebtn = document.getElementById("mutebtn");
+    muteBtn = document.getElementById("muteBtn");
     // full screen option
-    fullscreenbtn = document.getElementById("fullscreenbtn");
+    fullScreen = document.getElementById("fullScreen");
     // event listeners
     // play button
     playbtn.addEventListener("click", playPause, false);
@@ -45,9 +45,9 @@ function intializePlayer() {
     // time update
     vid.addEventListener("timeupdate", seektimeupdate, false);
     // mute button
-    mutebtn.addEventListener("click", vidmute, false);
+    muteBtn.addEventListener("click", vidmute, false);
     // full screen
-    fullscreenbtn.addEventListener("click", toggleFullScreen, false);
+    fullScreen.addEventListener("click", toggleFullScreen, false);
 }
 window.onload = intializePlayer;
 
@@ -55,20 +55,20 @@ window.onload = intializePlayer;
 function playPause() {
     if (vid.paused) {
         vid.play();
-        playbtn.innerHTML = "<i class='icon-pause'></i>";
+        playbtn.innerHTML = "<i class='fa fa-pause'></i>";
     } else {
         vid.pause();
-        playbtn.innerHTML = "<i class='icon-play'></i>";
+        playbtn.innerHTML = "<i class='fa fa-play'></i>";
     }
 }
 
 function clickPlay() {
     if (vid.paused) {
         vid.play();
-        playbtn.innerHTML = "<i class='icon-pause'></i>";
+        playbtn.innerHTML = "<i class='fa fa-pause'></i>";
     } else {
         vid.pause();
-        playbtn.innerHTML = "<i class='icon-play'></i>";
+        playbtn.innerHTML = "<i class='fa fa-play'></i>";
     }
 }
 
@@ -106,10 +106,10 @@ function seektimeupdate() {
 function vidmute() {
     if (vid.muted) {
         vid.muted = false;
-        mutebtn.innerHTML = "<i class='icon-unmute'></i>";
+        muteBtn.innerHTML = "<i class='fa fa-volume-up'></i>";
     } else {
         vid.muted = true;
-        mutebtn.innerHTML = "<i class='icon-mute'></i>";
+        muteBtn.innerHTML = "<i class='fa fa-volume-off'></i>";
     }
 }
 
