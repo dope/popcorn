@@ -1,0 +1,29 @@
+/**
+*
+* Popcorn — A customizable and simple video player
+* Created by @joericho
+* Source: http://github.com/dope/popcorn
+* Licenced under MIT
+*
+**/
+
+
+/**
+*
+* Base Styles for Popcorn
+* Reset, typography, color etc.
+*
+**/
+
+@import 'base/base';
+
+/**
+*
+* Components for Popcorn
+* - Customizing the UI.
+* - The dirty hacks.
+*
+**/
+
+@import 'components/video';
+@import 'components/browser-hacks';

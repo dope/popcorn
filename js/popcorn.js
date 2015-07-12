@@ -1,16 +1,15 @@
 //
-// Popcorn V1
-// A run through of what's what.
+// Popcorn v2
+// Let's go.
 //
 // Made by @joericho
 // Licensed under MIT
 //
 
-// basic variables
+// global variables
 var vid;
-var playbtn;
-var playbtn;
-var clickplay;
+var playBtn;
+var clickPlay;
 var slider;
 var current;
 var duration;
@@ -19,56 +18,34 @@ var fullScreen;
 
 function intializePlayer() {
     // object references
-    // main vid class
-    vid = document.getElementById("mainVideo");
-    // play/pause button
-    playbtn = document.getElementById("playPause");
-    // click the video to play
-    clickplay = document.getElementById("mainVideo");
-    // time slider
-    slider = document.getElementById("slider");
-    // curent time
-    current = document.getElementById("current");
-    // duration time
-    duration = document.getElementById("duration");
-    // mute button
-    muteBtn = document.getElementById("muteBtn");
-    // full screen option
-    fullScreen = document.getElementById("fullScreen");
+    vid         = document.getElementById("video");
+    playBtn     = document.getElementById("video--play");
+    clickPlay   = document.getElementById("video--block");
+    slider      = document.getElementById("video--slider");
+    current     = document.getElementById("video--current");
+    duration    = document.getElementById("video--duration");
+    muteBtn     = document.getElementById("video--mute");
+    fullScreen  = document.getElementById("video--full");
+
     // event listeners
-    // play button
-    playbtn.addEventListener("click", playPause, false);
-    // click to play
-    clickplay.addEventListener("click", clickPlay, false);
-    // text slider
+    playBtn.addEventListener("click", playPause, false);
+    clickPlay.addEventListener("click", clickPlay, false);
     slider.addEventListener("change", vidSeek, false);
-    // time update
     vid.addEventListener("timeupdate", seektimeupdate, false);
-    // mute button
     muteBtn.addEventListener("click", vidmute, false);
-    // full screen
     fullScreen.addEventListener("click", toggleFullScreen, false);
 }
+
 window.onload = intializePlayer;
 
 // play and pause button
 function playPause() {
     if (vid.paused) {
         vid.play();
-        playbtn.innerHTML = "<i class='fa fa-pause'></i>";
+        playBtn.innerHTML = "<i class='fa fa-pause'></i>";
     } else {
         vid.pause();
-        playbtn.innerHTML = "<i class='fa fa-play'></i>";
-    }
-}
-
-function clickPlay() {
-    if (vid.paused) {
-        vid.play();
-        playbtn.innerHTML = "<i class='fa fa-pause'></i>";
-    } else {
-        vid.pause();
-        playbtn.innerHTML = "<i class='fa fa-play'></i>";
+        playBtn.innerHTML = "<i class='fa fa-play'></i>";
     }
 }
 
@@ -80,12 +57,13 @@ function vidSeek() {
 
 // updating time, with maths & shit
 function seektimeupdate() {
-    var nt = vid.currentTime * (100 / vid.duration);
+    var nt       = vid.currentTime * (100 / vid.duration);
     slider.value = nt;
-    var curmins = Math.floor(vid.currentTime / 60);
-    var cursecs = Math.floor(vid.currentTime - curmins * 60);
-    var durmins = Math.floor(vid.duration / 60);
-    var dursecs = Math.floor(vid.duration - durmins * 60);
+    var curmins  = Math.floor(vid.currentTime / 60);
+    var cursecs  = Math.floor(vid.currentTime - curmins * 60);
+    var durmins  = Math.floor(vid.duration / 60);
+    var dursecs  = Math.floor(vid.duration - durmins * 60);
+
     if (cursecs < 10) {
         cursecs = "0" + cursecs;
     }
@@ -122,8 +100,4 @@ function toggleFullScreen() {
     } else if (vid.mozRequestFullScreen) {
         vid.mozRequestFullScreen();
     }
-}
-
-function touchStart(event){
-  var playbtn = event.target;
 }

@@ -2,57 +2,43 @@
 <html lang="en-US">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, minimal-ui">
-    <link rel="stylesheet" type="text/css" href="css/popcorn.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <title>Popcorn</title>
-    <style>
-     body {
-      background:#2c3e50;
-  }
-  #videoWrap {
-    max-width:500px;
-    margin:50px auto;
-
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, minimal-ui">
+  <link rel="stylesheet" type="text/css" href="css/popcorn.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Popcorn</title>
 </head>
 
 <body>
-    <div class="cf" id="videoWrap">
-       <video id="mainVideo">
-           <source src="media/movie.mp4" type="video/mp4">
-           </video>
+  <div class="video" id="video--block">
+    <video class="video__video" width="500px" id="video">
+      <source src="media/movie.mp4" type="video/mp4"></source>
+    </video>
+    <div class="video__controls">
+      <button class="video__play" id="video--play">
+        <i class="fa fa-play"></i>
+      </button>
 
-           <div id="controls">
-            <!-- play button -->
-            <button class="video-btn" id="playPause">
-                <i class="fa fa-play"></i>
-            </button>
+      <!-- Video Slider -->
+      <div class="video__slider" id="video--slider"></div>
 
-            <!-- timer -->
-            <input id="slider" type="range" min="0" max="100" value="0" step="1">
+      <!-- time -->
+      <span class="video__time" id="video--current">00:00</span>
+      <span class="video__time" id="video--time">/</span>
+      <span class="video__time" id="video--duration">00:00</span>
 
-            <!-- time -->
-            <span class="time" id="current">00:00</span>
-            <span class="time" id="time">/</span>
-            <span class="time" id="duration">00:00</span>
+      <!-- mute -->
+      <button class="video__volume" id="video--mute">
+        <i class="fa fa-volume-up"></i>
+      </button>
 
-            <!-- mute -->
-            <button class="video-btn" id="muteBtn">
-                <i class="fa fa-volume-up"></i>
-            </button>
-
-            <!-- full screen -->
-            <button class="video-btn" id="fullScreen">
-                <i class="fa fa-expand"></i>
-            </button>
-        </div>
+      <button class="video-btn" id="video--full">
+        <i class="fa fa-expand"></i>
+      </button>
     </div>
+  </div>
 
-    <script src="js/popcorn.js" type="text/javascript"></script>
-    <script src="js/html5slider.js" type="text/javascript"></script>
+  <script src="js/popcorn.js" type="text/javascript"></script>
 </body>
-
 </html>
