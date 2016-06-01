@@ -1,0 +1,23 @@
+{
+  "name": "popcorn",
+  "version": "2.0.0",
+  "description": "Popcorn, a HTML5 video player",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dope/popcorn.git"
+  },
+  "author": "Joe Richardson <joe@lifes.gd>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dope/popcorn/issues"
+  },
+  "homepage": "https://github.com/dope/popcorn#readme",
+  "devDependencies": {
+    "browser-sync": "^2.10.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-uglify": "^1.5.1"
+  }
+}

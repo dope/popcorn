@@ -4,55 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, minimal-ui">
-    <link rel="stylesheet" type="text/css" href="css/popcorn.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/popcorn.css">
     <title>Popcorn</title>
-    <style>
-     body {
-      background:#2c3e50;
-  }
-  #videoWrap {
-    max-width:500px;
-    margin:50px auto;
-
-}
-</style>
 </head>
 
-<body>
-    <div class="cf" id="videoWrap">
-       <video id="mainVideo">
-           <source src="media/movie.mp4" type="video/mp4">
-           </video>
+<body style="background: #1b1b1b;">
 
-           <div id="controls">
-            <!-- play button -->
-            <button class="video-btn" id="playPause">
-                <i class="fa fa-play"></i>
-            </button>
+    <div class="popcorn" style="width: 500px; margin: 15rem auto;">
+        <!-- Video -->
+        <video class="popcorn__video" poster="demo/poster.jpg">
+            <source src="demo/movie.mp4" type="video/mp4">
+        </video>
 
-            <!-- timer -->
-            <input id="slider" type="range" min="0" max="100" value="0" step="1">
+        <!-- Interface -->
+        <div class="popcorn__interface">
+            <div class="popcorn__seek  js-seek">
+                <span class="popcorn__overlay  js-overlay"></span>
+            </div>
 
-            <!-- time -->
-            <span class="time" id="current">00:00</span>
-            <span class="time" id="time">/</span>
-            <span class="time" id="duration">00:00</span>
+            <div class="popcorn__col popcorn__col--left">
+                <i class="icon icon-play  js-play"></i>
+                <span class="popcorn__time  js-time">0:00 / 14:50</span>
+            </div>
+            <div class="popcorn__col popcorn__col--right">
+                <i class="icon icon-volume-up  js-volume"></i>
+                <i class="icon icon-screen-full  js-screen"></i>
+            </div>
+        </div>
 
-            <!-- mute -->
-            <button class="video-btn" id="muteBtn">
-                <i class="fa fa-volume-up"></i>
-            </button>
-
-            <!-- full screen -->
-            <button class="video-btn" id="fullScreen">
-                <i class="fa fa-expand"></i>
-            </button>
+        <div class="popcorn__big-large">
+            <i class="icon icon-play-large"></i>
         </div>
     </div>
 
-    <script src="js/popcorn.js" type="text/javascript"></script>
-    <script src="js/html5slider.js" type="text/javascript"></script>
+    <script src="dist/popcorn.js"></script>
 </body>
 
 </html>
