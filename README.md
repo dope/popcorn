@@ -1,2 +1,2 @@
-#Popcorn
+# Popcorn
 Popcorn is a customizable video player that is created with the best technologies, HTML5, CSS3 & Javscript. Popcorn was created for web designers, designers who don't care much for Javscript and heavy programming and want to focus solely on the design aspect of HTML5 Video. Getting started with Popcorn couldn't be easier — it's currently at it's first stable release with compatibile with Chrome, Safari, Firefox, Opera & IE10
